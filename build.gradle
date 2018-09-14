@@ -2,17 +2,23 @@
 
 buildscript {
 
-    ext {
-        versions = [
-                kotlin: '1.2.70',
-                junit : '4.12'
-        ]
+    ext.versions = [
+            kotlin: '1.2.70',
+            junit : '4.12'
+    ]
 
-        dept = [
-                kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
-                junit : "junit:junit:$versions.junit"
-        ]
-    }
+    ext.dept = [
+            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+            junit : "junit:junit:$versions.junit"
+    ]
+
+    ext.config = [
+            compileSdk: 28,
+            minSdk: 22,
+            targetSdk: 28,
+            versionCode: 1,
+            versionName: "1.0"
+    ]
 
     repositories {
         google()
