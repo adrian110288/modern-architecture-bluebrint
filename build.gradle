@@ -1,0 +1,38 @@
+//apply from: 'common-dept.gradle'
+
+buildscript {
+
+    ext {
+        versions = [
+                kotlin: '1.2.70',
+                junit : '4.12'
+        ]
+
+        dept = [
+                kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+                junit : "junit:junit:$versions.junit"
+        ]
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.0-alpha10'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
+    }
+
+
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
