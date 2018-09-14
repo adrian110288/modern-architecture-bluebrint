@@ -23,6 +23,19 @@ android {
             minifyEnabled false
         }
     }
+
+    flavorDimensions 'default'
+
+    productFlavors {
+        dev {
+            dimension 'default'
+            versionNameSuffix '-dev'
+            applicationIdSuffix '.dev'
+        }
+        prod {
+            dimension 'default'
+        }
+    }
 }
 
 dependencies {
