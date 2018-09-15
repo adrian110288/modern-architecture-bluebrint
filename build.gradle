@@ -1,20 +1,31 @@
-
 buildscript {
 
     ext.versions = [
-            kotlin: '1.2.70',
-            junit : '4.12'
+            kotlin  : '1.2.70',
+            junit   : '4.12',
+            support : '28.0.0-rc02',
+            findbugs: '3.0.2',
+            rxjava  : '2.2.2',
+            inject  : '1',
+            dagger  : '2.17'
     ]
 
     ext.dept = [
-            kotlin: "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
-            junit : "junit:junit:$versions.junit"
+            kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
+            junit          : "junit:junit:$versions.junit",
+            rxjava         : "io.reactivex.rxjava2:rxjava:${versions.rxjava}",
+            inject         : "javax.inject:javax.inject:${versions.inject}",
+            findbugs       : "com.google.code.findbugs:jsr305:${versions.findbugs}",
+            daggerLib      : "com.google.dagger:dagger-android:${versions.dagger}",
+            daggerSupport  : "com.google.dagger:dagger-android-support:${versions.dagger}",
+            daggerProcessor: "com.google.dagger:dagger-android-processor:${versions.dagger}",
+            daggerCompiler : "com.google.dagger:dagger-compiler:${versions.dagger}"
     ]
 
     ext.config = [
-            compileSdk: 28,
-            minSdk: 21,
-            targetSdk: 28,
+            compileSdk : 28,
+            minSdk     : 21,
+            targetSdk  : 28,
             versionCode: 1,
             versionName: "1.0"
     ]
