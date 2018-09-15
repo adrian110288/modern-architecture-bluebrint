@@ -41,7 +41,6 @@ dependencies {
 
     implementation project(':commons')
 
-    api project(':commons', )
     implementation(
             dept.kotlin,
             'com.android.support:appcompat-v7:28.0.0-rc02'
