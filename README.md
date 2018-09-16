@@ -1,1 +1,1 @@
-#Opinionated Modern Architecture Bluebrint
+# Modern Architecture Blueprint
