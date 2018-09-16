@@ -28,8 +28,9 @@ dependencies {
     implementation dept.inject
     implementation dept.daggerLib
     implementation dept.daggerSupport
-    implementation dept.daggerProcessor
-    implementation dept.daggerCompiler
+
+    annotationProcessor dept.daggerProcessor
+    annotationProcessor dept.daggerCompiler
 
     implementation "com.squareup.okhttp3:okhttp:3.10.0"
     implementation "com.squareup.okhttp3:logging-interceptor:3.10.0"

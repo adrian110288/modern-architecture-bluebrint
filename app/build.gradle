@@ -47,8 +47,9 @@ dependencies {
     implementation dept.inject
     implementation dept.daggerLib
     implementation dept.daggerSupport
-    implementation dept.daggerProcessor
-    implementation dept.daggerCompiler
+
+    annotationProcessor dept.daggerProcessor
+    annotationProcessor dept.daggerCompiler
 
     implementation "com.android.support:appcompat-v7:${versions.support}"
     implementation "com.android.support:cardview-v7:${versions.support}"
