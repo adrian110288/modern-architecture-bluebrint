@@ -23,6 +23,21 @@ android {
 
 dependencies {
     implementation dept.kotlin
+    implementation dept.findbugs
+    implementation dept.rxjava
+    implementation dept.inject
+    implementation dept.daggerLib
+    implementation dept.daggerSupport
+    implementation dept.daggerProcessor
+    implementation dept.daggerCompiler
+
+    implementation "com.squareup.okhttp3:okhttp:3.10.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.10.0"
+    implementation "com.google.code.gson:gson:2.8.4"
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+
     testImplementation dept.junit
     testImplementation dept.mockito
 }

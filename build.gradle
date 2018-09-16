@@ -1,5 +1,15 @@
 buildscript {
 
+    ext.config = [
+            compileSdk : 28,
+            minSdk     : 21,
+            targetSdk  : 28,
+            versionCode: 1,
+            versionName: "1.0"
+    ]
+
+//    Project-wide common dependencies
+
     ext.versions = [
             kotlin  : '1.2.70',
             junit   : '4.12',
@@ -7,7 +17,8 @@ buildscript {
             findbugs: '3.0.2',
             rxjava  : '2.2.2',
             inject  : '1',
-            dagger  : '2.17'
+            dagger  : '2.17',
+            mockito : '2.0.0-RC2'
     ]
 
     ext.dept = [
@@ -19,15 +30,8 @@ buildscript {
             daggerLib      : "com.google.dagger:dagger-android:${versions.dagger}",
             daggerSupport  : "com.google.dagger:dagger-android-support:${versions.dagger}",
             daggerProcessor: "com.google.dagger:dagger-android-processor:${versions.dagger}",
-            daggerCompiler : "com.google.dagger:dagger-compiler:${versions.dagger}"
-    ]
-
-    ext.config = [
-            compileSdk : 28,
-            minSdk     : 21,
-            targetSdk  : 28,
-            versionCode: 1,
-            versionName: "1.0"
+            daggerCompiler : "com.google.dagger:dagger-compiler:${versions.dagger}",
+            mockito        : "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockito}"
     ]
 
     repositories {
