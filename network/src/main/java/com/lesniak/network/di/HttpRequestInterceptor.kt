@@ -1,4 +1,4 @@
-package com.lesniak.network
+package com.lesniak.network.di
 
 import okhttp3.Interceptor
 import okhttp3.Response
