@@ -39,7 +39,7 @@ android {
 
 dependencies {
 
-    implementation project(':commons')
+    implementation project(':ui-commons')
 
     implementation dept.kotlin
     implementation dept.findbugs
