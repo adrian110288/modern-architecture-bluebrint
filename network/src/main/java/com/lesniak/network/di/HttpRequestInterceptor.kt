@@ -4,9 +4,8 @@ import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject
 import javax.inject.Named
-import javax.inject.Singleton
 
-@Singleton
+@NetworkScope
 class HttpRequestInterceptor @Inject constructor(@Named("apiKey") val apiKey: String)
     : Interceptor {
 

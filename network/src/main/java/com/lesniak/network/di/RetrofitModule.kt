@@ -9,18 +9,17 @@ import okhttp3.logging.HttpLoggingInterceptor.Level.BASIC
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
-import javax.inject.Singleton
 
 @Module(includes = [GsonModule::class])
-class RetrofitModule(private val baseUrl: String,
-                     private val apiKey: String) {
+class RetrofitModule(private val apiKey: String) {
+
     @Provides
-    @Singleton
+    @NetworkScope
     @Named("apiKey")
     fun apiKey() = apiKey
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun okHttp(interceptor: HttpRequestInterceptor,
                loggingInterceptor: HttpLoggingInterceptor) =
             OkHttpClient.Builder()
@@ -29,16 +28,16 @@ class RetrofitModule(private val baseUrl: String,
                     .build()
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun loggingInterceptor() =
             HttpLoggingInterceptor().apply { level = BASIC }
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun rxAdapterFactory() = RxJava2CallAdapterFactory.create()
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun retrofit(gsonConverterFactory: GsonConverterFactory,
                  rxJavaCallAdapterFactory: RxJava2CallAdapterFactory,
                  okHttpClient: OkHttpClient) =
@@ -46,7 +45,8 @@ class RetrofitModule(private val baseUrl: String,
             Retrofit.Builder()
                     .addConverterFactory(gsonConverterFactory)
                     .addCallAdapterFactory(rxJavaCallAdapterFactory)
-                    .baseUrl(baseUrl)
+//                    TODO Find better way to inject base url
+                    .baseUrl("https://jsonplaceholder.typicode.com/")
                     .client(okHttpClient)
                     .build()
 }

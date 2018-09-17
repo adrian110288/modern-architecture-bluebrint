@@ -5,19 +5,18 @@ import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
 import retrofit2.converter.gson.GsonConverterFactory
-import javax.inject.Singleton
 
 @Module
 class GsonModule {
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun gson() =
             GsonBuilder()
                     .create()
 
     @Provides
-    @Singleton
+    @NetworkScope
     fun gsonConverterFactory(gson: Gson) =
             GsonConverterFactory.create(gson)
 }

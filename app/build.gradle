@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion config.compileSdk
@@ -37,9 +38,14 @@ android {
     }
 }
 
+androidExtensions {
+    experimental = true
+}
+
 dependencies {
 
     implementation project(':ui-commons')
+    implementation project(':network')
 
     implementation dept.kotlin
     implementation dept.findbugs
@@ -48,8 +54,8 @@ dependencies {
     implementation dept.daggerLib
     implementation dept.daggerSupport
 
-    annotationProcessor dept.daggerProcessor
-    annotationProcessor dept.daggerCompiler
+    kapt dept.daggerProcessor
+    kapt dept.daggerCompiler
 
     implementation "com.android.support:appcompat-v7:${versions.support}"
     implementation "com.android.support:cardview-v7:${versions.support}"
