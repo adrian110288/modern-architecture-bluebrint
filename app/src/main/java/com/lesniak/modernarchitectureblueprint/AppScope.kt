@@ -1,4 +1,4 @@
-package com.lesniak.modern_architecture_blueprint
+package com.lesniak.modernarchitectureblueprint
 
 import javax.inject.Scope
 

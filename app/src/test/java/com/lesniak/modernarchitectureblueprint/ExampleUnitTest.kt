@@ -1,4 +1,4 @@
-package com.lesniak.modern_architecture_blueprint
+package com.lesniak.modernarchitectureblueprint
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

@@ -1,4 +1,4 @@
-package com.lesniak.modern_architecture_blueprint
+package com.lesniak.modernarchitectureblueprint
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
