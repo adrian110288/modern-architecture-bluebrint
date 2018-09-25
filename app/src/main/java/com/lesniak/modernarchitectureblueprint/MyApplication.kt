@@ -1,6 +1,7 @@
 package com.lesniak.modernarchitectureblueprint
 
 import android.app.Application
+import com.lesniak.data.di.DataComponent
 
 class MyApplication : Application() {
 
@@ -14,8 +15,11 @@ class MyApplication : Application() {
     }
 
     val appComponent: AppComponent by lazy {
+
+        val dataComponent = DataComponent.BUILDER.build()
+
         DaggerAppComponent.builder()
-//                .networkComponent(NetworkComponent.INSTANCE)
+            .dataComponent(dataComponent)
             .appModule(AppModule(this))
             .build()
     }

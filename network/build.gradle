@@ -10,7 +10,8 @@ android {
         targetSdkVersion config.targetSdk
         versionCode config.versionCode
         versionName config.versionName
-        buildConfigField "String", "API_KEY", "\"" + getApiKey() + "\""
+        buildConfigField "String", "API_KEY", "\"" + getPropertyByName("api.key") + "\""
+        buildConfigField "String", "BASE_URL", "\"" + getPropertyByName("api.baseUrl") + "\""
     }
 
     buildTypes {

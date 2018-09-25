@@ -1,6 +1,5 @@
 package com.lesniak.network.di
 
-import com.lesniak.network.BuildConfig
 import com.lesniak.network.api.ApiService
 import dagger.Component
 
@@ -9,13 +8,7 @@ import dagger.Component
 interface NetworkComponent {
 
     companion object {
-
-        //        TODO Good idea?
-        val INSTANCE: NetworkComponent by lazy {
-            DaggerNetworkComponent.builder()
-                    .retrofitModule(RetrofitModule(BuildConfig.API_KEY))
-                    .build()
-        }
+        val BUILDER = DaggerNetworkComponent.builder()
     }
 
     fun apiService(): ApiService

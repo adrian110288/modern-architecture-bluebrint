@@ -3,7 +3,7 @@ package com.lesniak.modernarchitectureblueprint
 import dagger.Component
 
 @Component(
-//        dependencies = [NetworkComponent::class],
+    dependencies = [DataComponent::class],
     modules = [AppModule::class]
 )
 @AppScope

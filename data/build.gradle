@@ -10,6 +10,7 @@ android {
         targetSdkVersion config.targetSdk
         versionCode config.versionCode
         versionName config.versionName
+        buildConfigField "String", "DATABASE_NAME", "\"" + getPropertyByName("database.name") + "\""
     }
 
     buildTypes {

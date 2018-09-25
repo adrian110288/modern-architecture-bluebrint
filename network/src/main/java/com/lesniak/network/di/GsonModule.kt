@@ -12,8 +12,7 @@ class GsonModule {
     @Provides
     @NetworkScope
     fun gson() =
-            GsonBuilder()
-                    .create()
+        GsonBuilder().create()
 
     @Provides
     @NetworkScope
