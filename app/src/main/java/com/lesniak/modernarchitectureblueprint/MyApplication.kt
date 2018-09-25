@@ -1,14 +1,22 @@
 package com.lesniak.modernarchitectureblueprint
 
 import android.app.Application
-import com.lesniak.network.di.NetworkComponent
 
 class MyApplication : Application() {
 
+    companion object {
+        lateinit var INSTANCE: MyApplication
+            private set
+    }
+
+    init {
+        INSTANCE = this
+    }
+
     val appComponent: AppComponent by lazy {
         DaggerAppComponent.builder()
-                .networkComponent(NetworkComponent.INSTANCE)
-                .appModule(AppModule(this))
-                .build()
+//                .networkComponent(NetworkComponent.INSTANCE)
+            .appModule(AppModule(this))
+            .build()
     }
 }
