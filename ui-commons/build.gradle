@@ -28,29 +28,33 @@ androidExtensions {
     experimental = true
 }
 
+ext {
+    picasso = '2.71828'
+    rxAndroid = '2.0.2'
+    constraintLayout = '1.1.3'
+    supportLibs = '28.0.0'
+}
+
 dependencies {
 
-    implementation dept.kotlin
-    implementation dept.findbugs
-    implementation dept.rxjava
-    implementation dept.inject
-    implementation dept.daggerLib
-    implementation dept.daggerSupport
+    api dept.kotlin
+    api dept.findbugs
+    api dept.rxjava
+    api dept.inject
+    api dept.daggerLib
+    api dept.daggerSupport
 
-//    Annotation processors
+    api "com.android.support:appcompat-v7:${project.ext.supportLibs}"
+    api "com.android.support:cardview-v7:${project.ext.supportLibs}"
+    api "com.android.support:design:${project.ext.supportLibs}"
+    api "com.android.support:recyclerview-v7:${project.ext.supportLibs}"
+    api "com.android.support.constraint:constraint-layout:${project.ext.constraintLayout}"
+    api "io.reactivex.rxjava2:rxandroid:${project.ext.rxAndroid}"
+    api "com.squareup.picasso:picasso:${project.ext.picasso}"
+
     kapt dept.daggerProcessor
     kapt dept.daggerCompiler
 
-//    Commons
-    api "com.android.support:appcompat-v7:${versions.support}"
-    api "com.android.support:cardview-v7:${versions.support}"
-    api "com.android.support:design:${versions.support}"
-    api "com.android.support:recyclerview-v7:${versions.support}"
-    api "com.android.support.constraint:constraint-layout:1.1.3"
-    api "io.reactivex.rxjava2:rxandroid:2.0.2"
-    api "com.squareup.picasso:picasso:2.71828"
-
-//    Tests
     testImplementation dept.junit
     testImplementation dept.mockito
     androidTestImplementation dept.testrunner
@@ -59,6 +63,6 @@ dependencies {
 
 configurations.all {
     resolutionStrategy {
-        force "com.android.support:exifinterface:${versions.support}"
+        force "com.android.support:exifinterface:${project.ext.supportLibs}"
     }
 }

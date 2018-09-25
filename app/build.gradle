@@ -46,18 +46,9 @@ dependencies {
 
     implementation project(':ui-commons')
 
-    implementation dept.kotlin
-    implementation dept.findbugs
-    implementation dept.rxjava
-    implementation dept.inject
-    implementation dept.daggerLib
-    implementation dept.daggerSupport
-
-//    Annotation processors
     kapt dept.daggerProcessor
     kapt dept.daggerCompiler
 
-//    Tests
     testImplementation dept.junit
     testImplementation dept.mockito
     androidTestImplementation dept.testrunner

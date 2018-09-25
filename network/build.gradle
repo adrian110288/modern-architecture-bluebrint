@@ -24,23 +24,31 @@ android {
     }
 }
 
+ext {
+    okHttp = '3.10.0'
+    gson = '2.8.3'
+    retrofit = '2.4.0'
+    retrofitRxJavaAdapter = '1.0.0'
+}
+
 dependencies {
-    implementation dept.kotlin
-    implementation dept.findbugs
-    implementation dept.rxjava
-    implementation dept.inject
-    implementation dept.daggerLib
-    implementation dept.daggerSupport
+
+    api dept.kotlin
+    api dept.findbugs
+    api dept.rxjava
+    api dept.inject
+    api dept.daggerLib
+    api dept.daggerSupport
 
     kapt dept.daggerProcessor
     kapt dept.daggerCompiler
 
-    implementation "com.squareup.okhttp3:okhttp:3.10.0"
-    implementation "com.squareup.okhttp3:logging-interceptor:3.10.0"
-    implementation "com.google.code.gson:gson:2.8.4"
-    implementation "com.squareup.retrofit2:retrofit:2.4.0"
-    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
-    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation "com.squareup.okhttp3:okhttp:${project.ext.okHttp}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${project.ext.okHttp}"
+    implementation "com.google.code.gson:gson:${project.ext.gson}"
+    implementation "com.squareup.retrofit2:retrofit:${project.ext.retrofit}"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${project.ext.retrofitRxJavaAdapter}"
+    implementation "com.squareup.retrofit2:converter-gson:${project.ext.retrofit}"
 
     testImplementation dept.junit
     testImplementation dept.mockito
