@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion config.compileSdk
+
+    defaultConfig {
+        minSdkVersion config.minSdk
+        targetSdkVersion config.targetSdk
+        versionCode config.versionCode
+        versionName config.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+}
+
+ext {
+    room = '1.1.1'
+}
+
+dependencies {
+
+    implementation project(':network')
+
+    implementation "android.arch.persistence.room:runtime:$project.ext.room"
+    implementation "android.arch.persistence.room:rxjava2:$project.ext.room"
+    kapt "android.arch.persistence.room:compiler:$project.ext.room"
+    testImplementation "android.arch.persistence.room:testing:$project.ext.room"
+
+    kapt dept.daggerProcessor
+    kapt dept.daggerCompiler
+
+    testImplementation dept.junit
+    testImplementation dept.mockito
+}
+

@@ -43,12 +43,12 @@ dependencies {
     kapt dept.daggerProcessor
     kapt dept.daggerCompiler
 
-    implementation "com.squareup.okhttp3:okhttp:${project.ext.okHttp}"
-    implementation "com.squareup.okhttp3:logging-interceptor:${project.ext.okHttp}"
-    implementation "com.google.code.gson:gson:${project.ext.gson}"
-    implementation "com.squareup.retrofit2:retrofit:${project.ext.retrofit}"
-    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${project.ext.retrofitRxJavaAdapter}"
-    implementation "com.squareup.retrofit2:converter-gson:${project.ext.retrofit}"
+    implementation "com.squareup.okhttp3:okhttp:$project.ext.okHttp"
+    implementation "com.squareup.okhttp3:logging-interceptor:$project.ext.okHttp"
+    implementation "com.google.code.gson:gson:$project.ext.gson"
+    implementation "com.squareup.retrofit2:retrofit:$project.ext.retrofit"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$project.ext.retrofitRxJavaAdapter"
+    implementation "com.squareup.retrofit2:converter-gson:$project.ext.retrofit"
 
     testImplementation dept.junit
     testImplementation dept.mockito

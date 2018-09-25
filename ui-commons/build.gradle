@@ -44,13 +44,13 @@ dependencies {
     api dept.daggerLib
     api dept.daggerSupport
 
-    api "com.android.support:appcompat-v7:${project.ext.supportLibs}"
-    api "com.android.support:cardview-v7:${project.ext.supportLibs}"
-    api "com.android.support:design:${project.ext.supportLibs}"
-    api "com.android.support:recyclerview-v7:${project.ext.supportLibs}"
-    api "com.android.support.constraint:constraint-layout:${project.ext.constraintLayout}"
-    api "io.reactivex.rxjava2:rxandroid:${project.ext.rxAndroid}"
-    api "com.squareup.picasso:picasso:${project.ext.picasso}"
+    api "com.android.support:appcompat-v7:$project.ext.supportLibs"
+    api "com.android.support:cardview-v7:$project.ext.supportLibs"
+    api "com.android.support:design:$project.ext.supportLibs"
+    api "com.android.support:recyclerview-v7:$project.ext.supportLibs"
+    api "com.android.support.constraint:constraint-layout:$project.ext.constraintLayout"
+    api "io.reactivex.rxjava2:rxandroid:$project.ext.rxAndroid"
+    api "com.squareup.picasso:picasso:$project.ext.picasso"
 
     kapt dept.daggerProcessor
     kapt dept.daggerCompiler

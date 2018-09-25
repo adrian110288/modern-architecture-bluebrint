@@ -1,1 +1,1 @@
-include ':app', ':ui-commons', ':network'
+include ':app', ':ui-commons', ':network', ':data'
