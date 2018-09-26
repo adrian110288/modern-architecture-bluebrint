@@ -10,9 +10,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        MyApplication.INSTANCE
-            .appComponent
-            .inject(this)
+//        MyApplication.INSTANCE
+//            .appComponent
+//            .inject(this)
 
     }
 

@@ -1,9 +1,9 @@
-package com.lesniak.data
+package com.lesniak.data.db
 
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
-import com.lesniak.data.appentity.AppEntity
-import com.lesniak.data.appentity.AppEntityDao
+import com.lesniak.data.daos.AppEntityDao
+import com.lesniak.data.entities.AppEntity
 
 @Database(
     entities = [AppEntity::class],

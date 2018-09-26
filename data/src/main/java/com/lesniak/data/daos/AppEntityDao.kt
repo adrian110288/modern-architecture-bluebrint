@@ -1,6 +1,7 @@
-package com.lesniak.data.appentity
+package com.lesniak.data.daos
 
 import android.arch.persistence.room.*
+import com.lesniak.data.entities.AppEntity
 import io.reactivex.Single
 
 @Dao

@@ -1,9 +1,9 @@
-package com.lesniak.data.appentity
+package com.lesniak.data.entities
 
 import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
-import com.lesniak.data.appentity.AppEntity.Companion.TABLE_NAME
+import com.lesniak.data.entities.AppEntity.Companion.TABLE_NAME
 
 @Entity(tableName = TABLE_NAME)
 data class AppEntity(

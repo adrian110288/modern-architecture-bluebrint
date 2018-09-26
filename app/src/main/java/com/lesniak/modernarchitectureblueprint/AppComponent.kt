@@ -1,10 +1,14 @@
 package com.lesniak.modernarchitectureblueprint
 
+import com.lesniak.data.di.DataModule
+import com.lesniak.network.di.NetworkModule
 import dagger.Component
 
 @Component(
-    dependencies = [DataComponent::class],
-    modules = [AppModule::class]
+    modules = [
+        NetworkModule::class,
+        DataModule::class,
+        AppModule::class]
 )
 @AppScope
 interface AppComponent {

@@ -1,62 +1,22 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-kapt'
-
-android {
-    compileSdkVersion config.compileSdk
-
-    defaultConfig {
-        minSdkVersion config.minSdk
-        targetSdkVersion config.targetSdk
-        versionCode config.versionCode
-        versionName config.versionName
-        buildConfigField "String", "API_KEY", "\"" + getPropertyByName("api.key") + "\""
-        buildConfigField "String", "BASE_URL", "\"" + getPropertyByName("api.baseUrl") + "\""
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            minifyEnabled false
-        }
-    }
-}
+apply plugin: 'kotlin'
 
 ext {
-    okHttp = '3.10.0'
+    okHttp = '3.4.1'
     gson = '2.8.3'
-    retrofit = '2.4.0'
+    retrofit = '2.3.0'
     retrofitRxJavaAdapter = '1.0.0'
 }
 
 dependencies {
+    implementation dept.kotlin
+    implementation dept.rxjava
+    implementation dept.daggerLib
+    implementation dept.daggerSupport
 
-    api dept.kotlin
-    api dept.findbugs
-    api dept.rxjava
-    api dept.inject
-    api dept.daggerLib
-    api dept.daggerSupport
-
-    kapt dept.daggerProcessor
-    kapt dept.daggerCompiler
-
-    implementation "com.squareup.okhttp3:okhttp:$project.ext.okHttp"
-    implementation "com.squareup.okhttp3:logging-interceptor:$project.ext.okHttp"
+    compile "com.squareup.okhttp3:okhttp:$project.ext.okHttp"
+    compile "com.squareup.okhttp3:logging-interceptor:$project.ext.okHttp"
     implementation "com.google.code.gson:gson:$project.ext.gson"
-    implementation "com.squareup.retrofit2:retrofit:$project.ext.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
+    implementation "com.squareup.retrofit2:retrofit:2.3.0"
     implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$project.ext.retrofitRxJavaAdapter"
-    implementation "com.squareup.retrofit2:converter-gson:$project.ext.retrofit"
-
-    testImplementation dept.junit
-    testImplementation dept.mockito
-}
-
-def getApiKey() {
-    Properties properties = new Properties();
-    properties.load(project.rootProject.file("local.properties").newDataInputStream())
-    return properties.getProperty("apiKey")
 }
