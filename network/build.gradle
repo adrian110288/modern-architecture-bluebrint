@@ -1,22 +1,31 @@
 apply plugin: 'kotlin'
 
-ext {
-    okHttp = '3.4.1'
-    gson = '2.8.3'
-    retrofit = '2.3.0'
-    retrofitRxJavaAdapter = '1.0.0'
-}
+ext.versions = [
+        okHttp               : '3.4.1',
+        gson                 : '2.8.3',
+        retrofit             : '2.4.0',
+        retrofitRxJavaAdapter: '1.0.0'
+]
+
+ext.dept = [
+        okHttp               : "com.squareup.okhttp3:okhttp:$project.ext.versions.okHttp",
+        okHttpLogging        : "com.squareup.okhttp3:logging-interceptor:$project.ext.versions.okHttp",
+        gson                 : "com.google.code.gson:gson:$project.ext.versions.gson",
+        gsonConverter        : "com.squareup.retrofit2:converter-gson:$project.ext.versions.retrofit",
+        retrofit             : "com.squareup.retrofit2:retrofit:$project.ext.versions.retrofit",
+        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$project.ext.versions.retrofitRxJavaAdapter"
+]
 
 dependencies {
-    implementation dept.kotlin
-    implementation dept.rxjava
-    implementation dept.daggerLib
-    implementation dept.daggerSupport
 
-    compile "com.squareup.okhttp3:okhttp:$project.ext.okHttp"
-    compile "com.squareup.okhttp3:logging-interceptor:$project.ext.okHttp"
-    implementation "com.google.code.gson:gson:$project.ext.gson"
-    implementation "com.squareup.retrofit2:converter-gson:2.3.0"
-    implementation "com.squareup.retrofit2:retrofit:2.3.0"
-    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$project.ext.retrofitRxJavaAdapter"
+    implementation(
+            rootProject.dept.kotlin,
+            rootProject.dept.daggerLib,
+            dept.okHttp,
+            dept.okHttpLogging,
+            dept.gson,
+            dept.gsonConverter,
+            dept.retrofit,
+            dept.retrofitRxJavaAdapter
+    )
 }

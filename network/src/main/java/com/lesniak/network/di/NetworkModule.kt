@@ -2,17 +2,18 @@ package com.lesniak.network.di
 
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 @Module(includes = [RetrofitModule::class])
 class NetworkModule(private val apiKey: String, private val baseUrl: String) {
 
     @Provides
-    @NetworkScope
+    @Singleton
     @ApiKey
     fun apiKey() = apiKey
 
     @Provides
-    @NetworkScope
+    @Singleton
     @BaseUrl
     fun baseUrl() = baseUrl
 }

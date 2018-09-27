@@ -1,12 +1,12 @@
 package com.lesniak.network
 
 import com.lesniak.network.di.ApiKey
-import com.lesniak.network.di.NetworkScope
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject
+import javax.inject.Singleton
 
-@NetworkScope
+@Singleton
 class HttpRequestInterceptor @Inject constructor(@ApiKey private val apiKey: String) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
