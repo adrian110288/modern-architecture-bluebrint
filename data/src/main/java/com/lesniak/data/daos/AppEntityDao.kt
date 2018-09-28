@@ -1,24 +1,18 @@
 package com.lesniak.data.daos
 
-import android.arch.persistence.room.*
+import android.arch.persistence.room.Dao
+import android.arch.persistence.room.Query
+import com.lesniak.data.daos.base.BaseEntityDao
 import com.lesniak.data.entities.AppEntity
 import io.reactivex.Single
 
 @Dao
-interface AppEntityDao {
+interface AppEntityDao : BaseEntityDao<AppEntity> {
 
     @Query("SELECT * FROM ${AppEntity.TABLE_NAME}")
-    fun getAllAppEntities(): Single<List<AppEntity>>
+    fun getAll(): Single<List<AppEntity>>
 
     @Query("SELECT * FROM ${AppEntity.TABLE_NAME} WHERE uuid = :uuid")
-    fun getAppEntity(uuid: Long): Single<AppEntity>
+    fun get(uuid: Long): Single<AppEntity>
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAppEntity(appEntity: AppEntity): Long
-
-    @Delete
-    fun deleteAppEntity(appEntity: AppEntity): Int
-
-    @Query("DELETE FROM ${AppEntity.TABLE_NAME}")
-    fun eraseTable()
 }

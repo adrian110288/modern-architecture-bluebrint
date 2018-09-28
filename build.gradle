@@ -17,6 +17,7 @@ buildscript {
             junit     : '4.12',
             findbugs  : '3.0.2',
             rxjava    : '2.2.2',
+            retrofit  : '2.4.0',
             inject    : '1',
             dagger    : '2.17',
             mockito   : '2.0.0-RC2',
@@ -27,16 +28,17 @@ buildscript {
     ext.dept = [
             kotlin         : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$versions.kotlin",
             junit          : "junit:junit:$versions.junit",
-            rxjava         : "io.reactivex.rxjava2:rxjava:${versions.rxjava}",
-            inject         : "javax.inject:javax.inject:${versions.inject}",
-            findbugs       : "com.google.code.findbugs:jsr305:${versions.findbugs}",
-            daggerLib      : "com.google.dagger:dagger-android:${versions.dagger}",
-            daggerSupport  : "com.google.dagger:dagger-android-support:${versions.dagger}",
-            daggerProcessor: "com.google.dagger:dagger-android-processor:${versions.dagger}",
-            daggerCompiler : "com.google.dagger:dagger-compiler:${versions.dagger}",
-            mockito        : "com.nhaarman.mockitokotlin2:mockito-kotlin:${versions.mockito}",
-            testrunner     : "com.android.support.test:runner:${versions.testrunner}",
-            espresso       : "com.android.support.test.espresso:espresso-core:${versions.espresso}"
+            rxjava         : "io.reactivex.rxjava2:rxjava:$versions.rxjava",
+            retrofit       : "com.squareup.retrofit2:retrofit:$versions.retrofit",
+            inject         : "javax.inject:javax.inject:$versions.inject",
+            findbugs       : "com.google.code.findbugs:jsr305:$versions.findbugs",
+            daggerLib      : "com.google.dagger:dagger-android:$versions.dagger",
+            daggerSupport  : "com.google.dagger:dagger-android-support:$versions.dagger",
+            daggerProcessor: "com.google.dagger:dagger-android-processor:$versions.dagger",
+            daggerCompiler : "com.google.dagger:dagger-compiler:$versions.dagger",
+            mockito        : "com.nhaarman.mockitokotlin2:mockito-kotlin:$versions.mockito",
+            testrunner     : "com.android.support.test:runner:$versions.testrunner",
+            espresso       : "com.android.support.test.espresso:espresso-core:$versions.espresso"
     ]
 
     repositories {

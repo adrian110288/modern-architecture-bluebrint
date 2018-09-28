@@ -4,6 +4,9 @@ dependencies {
 
     implementation project(':network')
 
-    implementation dept.kotlin
-    implementation dept.daggerLib
+    implementation(
+            rootProject.dept.kotlin,
+            rootProject.dept.daggerLib,
+            rootProject.dept.retrofit
+    )
 }

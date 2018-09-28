@@ -3,7 +3,6 @@ apply plugin: 'kotlin'
 ext.versions = [
         okHttp               : '3.4.1',
         gson                 : '2.8.3',
-        retrofit             : '2.4.0',
         retrofitRxJavaAdapter: '1.0.0'
 ]
 
@@ -11,18 +10,16 @@ ext.dept = [
         okHttp               : "com.squareup.okhttp3:okhttp:$project.ext.versions.okHttp",
         okHttpLogging        : "com.squareup.okhttp3:logging-interceptor:$project.ext.versions.okHttp",
         gson                 : "com.google.code.gson:gson:$project.ext.versions.gson",
-        gsonConverter        : "com.squareup.retrofit2:converter-gson:$project.ext.versions.retrofit",
-        retrofit             : "com.squareup.retrofit2:retrofit:$project.ext.versions.retrofit",
+        gsonConverter        : "com.squareup.retrofit2:converter-gson:$rootProject.ext.versions.retrofit",
         retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$project.ext.versions.retrofitRxJavaAdapter"
 ]
 
 dependencies {
 
-    api dept.retrofit
-
     implementation(
             rootProject.dept.kotlin,
             rootProject.dept.daggerLib,
+            rootProject.dept.retrofit,
             dept.okHttp,
             dept.okHttpLogging,
             dept.gson,

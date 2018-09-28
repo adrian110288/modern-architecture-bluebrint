@@ -9,7 +9,6 @@ android {
         targetSdkVersion config.targetSdk
         versionCode config.versionCode
         versionName config.versionName
-        buildConfigField "String", "DATABASE_NAME", "\"" + getPropertyByName("database.name") + "\""
     }
 
     buildTypes {
@@ -23,29 +22,35 @@ android {
     }
 }
 
-ext {
-    room = '1.1.1'
-}
+ext.versions = [
+        room: '1.1.1'
+]
+
+ext.dept = [
+        roomRuntime : "android.arch.persistence.room:runtime:$project.ext.versions.room",
+        roomRx      : "android.arch.persistence.room:rxjava2:$project.ext.versions.room",
+        roomCompiler: "android.arch.persistence.room:compiler:$project.ext.versions.room",
+        roomTesting : "android.arch.persistence.room:testing:$project.ext.versions.room"
+]
 
 dependencies {
 
-//    implementation project(':api')
+    implementation project(':api')
 
-    implementation dept.kotlin
-    implementation dept.rxjava
+    implementation(
+            rootProject.dept.kotlin,
+            rootProject.dept.rxjava,
+            rootProject.dept.daggerLib,
+            dept.roomRuntime,
+            dept.roomRx
+    )
 
-    implementation "android.arch.persistence.room:runtime:$project.ext.room"
-    implementation "android.arch.persistence.room:rxjava2:$project.ext.room"
-    kapt "android.arch.persistence.room:compiler:$project.ext.room"
-    testImplementation "android.arch.persistence.room:testing:$project.ext.room"
+    kapt dept.roomCompiler
 
-    implementation dept.daggerLib
-    implementation dept.daggerSupport
-
-    kapt dept.daggerProcessor
-    kapt dept.daggerCompiler
-
-    testImplementation dept.junit
-    testImplementation dept.mockito
+    testImplementation(
+            rootProject.dept.junit,
+            rootProject.dept.mockito,
+            dept.roomTesting
+    )
 }
 
