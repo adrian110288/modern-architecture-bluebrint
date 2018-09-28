@@ -18,6 +18,8 @@ ext.dept = [
 
 dependencies {
 
+    api dept.retrofit
+
     implementation(
             rootProject.dept.kotlin,
             rootProject.dept.daggerLib,
@@ -25,7 +27,6 @@ dependencies {
             dept.okHttpLogging,
             dept.gson,
             dept.gsonConverter,
-            dept.retrofit,
             dept.retrofitRxJavaAdapter
     )
 }

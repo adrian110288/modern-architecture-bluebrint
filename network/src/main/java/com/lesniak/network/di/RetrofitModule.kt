@@ -32,7 +32,8 @@ class RetrofitModule {
 
     @Provides
     @Singleton
-    fun rxAdapterFactory() = RxJava2CallAdapterFactory.create()
+    fun rxAdapterFactory() =
+        RxJava2CallAdapterFactory.create()
 
     @Provides
     @Singleton
