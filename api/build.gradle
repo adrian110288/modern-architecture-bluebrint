@@ -1,10 +1,51 @@
-apply plugin: 'kotlin'
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion config.compileSdk
+
+    defaultConfig {
+        minSdkVersion config.minSdk
+        targetSdkVersion config.targetSdk
+        versionCode config.versionCode
+        versionName config.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+        }
+    }
+}
+
+ext.versions = [
+        okHttp               : '3.4.1',
+        gson                 : '2.8.3',
+        retrofitRxJavaAdapter: '1.0.0'
+]
+
+ext.dept = [
+        okHttp               : "com.squareup.okhttp3:okhttp:$project.ext.versions.okHttp",
+        okHttpLogging        : "com.squareup.okhttp3:logging-interceptor:$project.ext.versions.okHttp",
+        gson                 : "com.google.code.gson:gson:$project.ext.versions.gson",
+        gsonConverter        : "com.squareup.retrofit2:converter-gson:$rootProject.ext.versions.retrofit",
+        retrofitRxJavaAdapter: "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$project.ext.versions.retrofitRxJavaAdapter"
+]
 
 dependencies {
 
     implementation(
             rootProject.dept.kotlin,
             rootProject.dept.daggerLib,
-            rootProject.dept.retrofit
+            rootProject.dept.retrofit,
+            dept.okHttp,
+            dept.okHttpLogging,
+            dept.gson,
+            dept.gsonConverter,
+            dept.retrofitRxJavaAdapter
     )
 }

@@ -5,7 +5,6 @@ import dagger.Component
 
 @Component(
     modules = [
-        com.lesniak.api.network.NetworkModule::class,
         DataModule::class,
         AppModule::class]
 )
