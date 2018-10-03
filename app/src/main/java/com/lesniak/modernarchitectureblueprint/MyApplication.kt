@@ -13,6 +13,7 @@ class MyApplication : Application() {
         INSTANCE = this
     }
 
+
 //    val appComponent: AppComponent by lazy {
 //
 //        val dataComponent = DataComponent.BUILDER.build()

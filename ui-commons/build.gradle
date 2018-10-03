@@ -49,8 +49,6 @@ dependencies {
     api(
             rootProject.dept.kotlin,
             rootProject.dept.rxjava,
-            rootProject.dept.findbugs,
-            rootProject.dept.inject,
             rootProject.dept.daggerLib,
             rootProject.dept.daggerSupport,
             dept.appCompat,
@@ -60,11 +58,6 @@ dependencies {
             dept.constraintLayout,
             dept.rxAndroid,
             dept.picasso
-    )
-
-    kapt(
-            rootProject.dept.daggerProcessor,
-            rootProject.dept.daggerCompiler
     )
 
     testImplementation(
