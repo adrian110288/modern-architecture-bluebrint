@@ -1,19 +1,15 @@
 package com.lesniak.api.network
 
+import com.lesniak.api.BuildConfig
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
 @Module(includes = [RetrofitModule::class])
-class NetworkModule(private val apiKey: String, private val baseUrl: String) {
+class NetworkModule {
 
     @Provides
     @Singleton
     @ApiKey
-    fun apiKey() = apiKey
-
-    @Provides
-    @Singleton
-    @BaseUrl
-    fun baseUrl() = baseUrl
+    fun apiKey() = BuildConfig.API_KEY
 }

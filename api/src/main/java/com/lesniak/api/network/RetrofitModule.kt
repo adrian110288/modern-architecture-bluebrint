@@ -13,6 +13,10 @@ import javax.inject.Singleton
 @Module(includes = [GsonModule::class])
 class RetrofitModule {
 
+    companion object {
+        const val BASE_URL = "https://jsonplaceholder.typicode.com/"
+    }
+
     @Provides
     @Singleton
     fun okHttp(
@@ -39,14 +43,13 @@ class RetrofitModule {
     fun retrofit(
         gsonConverterFactory: GsonConverterFactory,
         rxJavaCallAdapterFactory: RxJava2CallAdapterFactory,
-        okHttpClient: OkHttpClient,
-        @BaseUrl baseUrl: String
+        okHttpClient: OkHttpClient
     ) =
 
         Retrofit.Builder()
             .addConverterFactory(gsonConverterFactory)
             .addCallAdapterFactory(rxJavaCallAdapterFactory)
-            .baseUrl(baseUrl)
+            .baseUrl(BASE_URL)
             .client(okHttpClient)
             .build()
 }

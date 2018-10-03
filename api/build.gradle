@@ -9,6 +9,7 @@ android {
         targetSdkVersion config.targetSdk
         versionCode config.versionCode
         versionName config.versionName
+        buildConfigField "String", "API_KEY", "\"" + getPropertyByName("api.key") + "\""
     }
 
     buildTypes {

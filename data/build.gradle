@@ -35,7 +35,7 @@ ext.dept = [
 
 dependencies {
 
-//    implementation project(':api')
+    implementation project(':api')
 
     implementation(
             rootProject.dept.kotlin,
