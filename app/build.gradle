@@ -43,7 +43,6 @@ androidExtensions {
 
 dependencies {
 
-    implementation project(':network')
     implementation project(':data')
     implementation project(':ui-commons')
 

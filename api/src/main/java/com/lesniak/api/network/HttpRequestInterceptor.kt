@@ -1,6 +1,5 @@
-package com.lesniak.network
+package com.lesniak.api.network
 
-import com.lesniak.network.di.ApiKey
 import okhttp3.Interceptor
 import okhttp3.Response
 import javax.inject.Inject

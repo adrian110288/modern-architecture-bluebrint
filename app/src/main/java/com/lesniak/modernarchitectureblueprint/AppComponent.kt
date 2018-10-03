@@ -1,12 +1,11 @@
 package com.lesniak.modernarchitectureblueprint
 
 import com.lesniak.data.di.DataModule
-import com.lesniak.network.di.NetworkModule
 import dagger.Component
 
 @Component(
     modules = [
-        NetworkModule::class,
+        com.lesniak.api.network.NetworkModule::class,
         DataModule::class,
         AppModule::class]
 )

@@ -1,4 +1,4 @@
-package com.lesniak.network.di
+package com.lesniak.api.network
 
 import dagger.Module
 import dagger.Provides

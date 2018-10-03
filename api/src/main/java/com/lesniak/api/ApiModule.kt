@@ -1,13 +1,13 @@
-package com.lesniak.api.di
+package com.lesniak.api
 
 import com.lesniak.api.services.ApiService
-import com.lesniak.network.di.NetworkModule
+import com.lesniak.api.services.ServicesModule
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
 import javax.inject.Singleton
 
-@Module(includes = [NetworkModule::class])
+@Module(includes = [ServicesModule::class])
 class ApiModule {
 
     @Provides

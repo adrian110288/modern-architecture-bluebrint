@@ -2,8 +2,6 @@ apply plugin: 'kotlin'
 
 dependencies {
 
-    implementation project(':network')
-
     implementation(
             rootProject.dept.kotlin,
             rootProject.dept.daggerLib,

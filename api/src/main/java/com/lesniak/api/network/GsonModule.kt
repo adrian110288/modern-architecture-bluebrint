@@ -1,10 +1,7 @@
-package com.lesniak.network.di
+package com.lesniak.api.network
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
-import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
